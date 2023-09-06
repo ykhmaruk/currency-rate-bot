@@ -5,7 +5,6 @@ import com.example.currency_rate_bot.mapper.CurrencyRateMapper;
 import com.example.currency_rate_bot.model.CurrencyRate;
 import com.example.currency_rate_bot.repository.CurrencyRateRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
