@@ -6,6 +6,7 @@ import com.example.currency_rate_bot.model.CurrencyRate;
 import com.example.currency_rate_bot.repository.CurrencyRateRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +18,7 @@ public class CurrencyRateServiceImpl implements CurrencyRateService {
     private final CurrencyRateRepository repository;
     private final CurrencyRateMapper mapper;
 
-
+    @Scheduled(cron = "0 7 * * * ?")
     @Override
     public void syncCurrencyRates() {
         List<CurrencyRate> list = client.get(url, ApiCurrencyDto.class).stream().map(
