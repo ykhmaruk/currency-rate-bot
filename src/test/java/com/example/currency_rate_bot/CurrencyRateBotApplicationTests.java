@@ -9,5 +9,4 @@ class CurrencyRateBotApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
