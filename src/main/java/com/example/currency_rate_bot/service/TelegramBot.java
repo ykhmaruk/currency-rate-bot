@@ -20,6 +20,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     @Override
+    public String getBotToken() {
+        return botConfig.getToken();
+    }
+
+    @Override
     public void onUpdateReceived(Update update) {
         String answer = "";
         if(update.hasMessage() && update.getMessage().hasText()) {

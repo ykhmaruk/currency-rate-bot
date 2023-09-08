@@ -1,6 +1,5 @@
 package com.example.currency_rate_bot.config;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
