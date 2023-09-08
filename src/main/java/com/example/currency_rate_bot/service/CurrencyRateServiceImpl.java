@@ -4,6 +4,8 @@ import com.example.currency_rate_bot.dto.ApiCurrencyDto;
 import com.example.currency_rate_bot.mapper.CurrencyRateMapper;
 import com.example.currency_rate_bot.model.CurrencyRate;
 import com.example.currency_rate_bot.repository.CurrencyRateRepository;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -24,5 +26,14 @@ public class CurrencyRateServiceImpl implements CurrencyRateService {
         List<CurrencyRate> list = client.get(url, ApiCurrencyDto.class).stream().map(
                 mapper::mapToModel).toList();
        repository.updateCurrencyRates(list);
+    }
+
+    @Override
+    public String get(String name) {
+        CurrencyRate rate = repository.findByCurrencyName(name);
+        return "Офіційний курс української гривні до %s на дату: %d становить: %f".formatted(
+                rate.getCurrencyName(),
+                LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")),
+                rate.getRate());
     }
 }
