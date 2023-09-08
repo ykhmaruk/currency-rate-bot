@@ -33,7 +33,7 @@ public class CurrencyRateServiceImpl implements CurrencyRateService {
 
     @Override
     public String get(String name) {
-        CurrencyRate rate = repository.findByCurrencyName(name);
+        CurrencyRate rate = repository.findByCurrencyNameIgnoreCase(name);
         String date =
                 LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         return "Офіційний курс української гривні до %s на дату: %s становить: %s".formatted(

@@ -30,7 +30,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
-            if (messageText.equals("/start")) {
+            if (messageText.equalsIgnoreCase("/start")) {
                 startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
             } else {
                 try {
