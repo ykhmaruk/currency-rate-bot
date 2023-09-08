@@ -8,14 +8,17 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@PropertySource("application.properties")
 public class CurrencyRateServiceImpl implements CurrencyRateService {
-    private static final String url =
-            "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
+    @Value("${nbu.api.url}")
+    private String url;
     private final HttpClient client;
     private final CurrencyRateRepository repository;
     private final CurrencyRateMapper mapper;

@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @SpringBootApplication
 public class CurrencyRateBotApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(CurrencyRateBotApplication.class, args);
     }
