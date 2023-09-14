@@ -65,7 +65,8 @@ public class TelegramBot extends TelegramLongPollingBot {
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
-            // handle the exception
+            throw new RuntimeException(("Can`t send message with text: %s "
+                    + ", to chat with ID $l").formatted(textToSend, chatId), e);
         }
     }
 }
