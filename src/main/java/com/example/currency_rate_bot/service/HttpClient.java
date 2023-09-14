@@ -35,25 +35,4 @@ public class HttpClient {
             throw new RuntimeException("Can`t fetch info from URL: %s".formatted(url), e);
         }
     }
-
-//    private final CloseableHttpClient httpClient = HttpClients.createDefault();
-//    private ObjectMapper objectMapper = new ObjectMapper();
-//    {
-//        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//    }
-//
-//    public <T> List<T> get(String url, Class<T> clazz){
-//        HttpGet request = new HttpGet(url);
-//        try (CloseableHttpResponse response = httpClient.execute(request)) {
-//            String jsonResponse = EntityUtils.toString(response.getEntity());
-//
-//            JavaType type = objectMapper.getTypeFactory().constructCollectionType(List.class, clazz);
-//
-//            return objectMapper.readValue(jsonResponse, type);
-////            return objectMapper.readValue(response.getEntity().getContent(),
-////                    new TypeReference<List<T>>() {});
-//        } catch (IOException e) {
-//            throw new RuntimeException("Can`t fetch info from URL: %s".formatted(url), e);
-//        }
-//    }
 }
