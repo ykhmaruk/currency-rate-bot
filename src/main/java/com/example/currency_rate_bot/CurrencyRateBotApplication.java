@@ -8,12 +8,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-@RequiredArgsConstructor
 public class CurrencyRateBotApplication {
-    static CurrencyRateServiceImpl service;
 
     public static void main(String[] args) {
         SpringApplication.run(CurrencyRateBotApplication.class, args);
-        service.syncCurrencyRates();
     }
 }
