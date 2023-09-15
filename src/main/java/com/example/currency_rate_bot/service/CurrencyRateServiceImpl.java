@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-//@PropertySource("application.properties")
+@PropertySource("classpath:application.properties")
 public class CurrencyRateServiceImpl implements CurrencyRateService {
-//    @Value("${nbu.api.url}")
-    private String url = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
+    @Value("${nbu.api.url}")
+    private String url;
     private final HttpClient client;
     private final CurrencyRateRepository repository;
     private final CurrencyRateMapper mapper;

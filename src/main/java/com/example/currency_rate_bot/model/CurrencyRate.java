@@ -18,10 +18,6 @@ import lombok.ToString;
 @Table(name = "currency_rate")
 public class CurrencyRate {
     @Id
-//    @GeneratedValue(generator = "create-currency-rate-seq", strategy = GenerationType.SEQUENCE)
-//    @SequenceGenerator(name = "create-currency-rate-seq",
-//            sequenceName = "create-currency-rate-seq",
-//            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "create-currency-rate-seq")
     @SequenceGenerator(name = "create-currency-rate-seq",
             sequenceName = "public.currency_rate_id_seq",
