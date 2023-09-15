@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-@PropertySource("application.properties")
+@PropertySource("classpath:application.properties")
 public class CurrencyRateServiceImpl implements CurrencyRateService {
     @Value("${nbu.api.url}")
     private String url;
