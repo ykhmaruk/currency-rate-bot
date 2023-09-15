@@ -36,7 +36,7 @@ class CurrencyRateRepositoryTest {
     private CurrencyRateRepository repository;
 
     @Test
-    @Sql("/scripts/add_three_currnecy.sql")
+    @Sql("/scripts/add_three_currency.sql")
     void firstTest() {
         CurrencyRate actual = repository.findByCurrencyNameIgnoreCase("євро");
         Assertions.assertNotNull(actual);
